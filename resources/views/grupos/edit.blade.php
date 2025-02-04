@@ -8,7 +8,17 @@
         @method('PUT')
         <div class="form-group">
             <label for="semestre">Semestre</label>
-            <input type="number" name="semestre" id="semestre" class="form-control" value="{{ $grupo->semestre }}" required min="1" max="99">
+            <input type="number" 
+            value="{{ $grupo->semestre }}" 
+            name="semestre" 
+            id="semestre" 
+            class="form-control" 
+            required 
+            min="1" 
+            max="20" 
+            oninput="this.value = this.value.replace(/[^0-9]/g, ''); 
+                    if(this.value > 20) this.value = 20;
+                    if(this.value < 1) this.value = 1;">
         </div>
         <div class="form-group">
             <label for="nombre_grupo">Nombre del Grupo</label>

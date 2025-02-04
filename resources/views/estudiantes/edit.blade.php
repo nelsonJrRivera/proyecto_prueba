@@ -16,8 +16,17 @@
             <input type="text" name="apellidos" id="apellidos" class="form-control" value="{{ $estudiante->apellidos }}" required>
         </div>
         <div class="form-group">
-            <label for="edad">Edad</label>
-            <input type="number" name="edad" id="edad" class="form-control" value="{{ $estudiante->edad }}" required min="15" max="100">
+          <label for="edad">Edad</label>
+          <input type="number" 
+                name="edad" 
+                id="edad" 
+                class="form-control" 
+                required 
+                min="10" 
+                max="100"
+                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)"
+                oninput="if(this.value.length > 3) this.value = this.value.slice(0, 3);
+                this.value = this.value.replace(/[^0-9]/g, '');">
         </div>
         <div class="form-group">
             <label for="email">Correo Electrónico</label>
@@ -25,7 +34,16 @@
         </div>
         <div class="form-group">
             <label for="telefono">Teléfono</label>
-            <input type="text" name="telefono" id="telefono" class="form-control" value="{{ $estudiante->telefono }}" required>
+            <input type="text" 
+                name="telefono" 
+                id="telefono" 
+                class="form-control" 
+                required
+                pattern="[0-9]{10}"
+                maxlength="10"
+                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                placeholder="Ingrese 10 dígitos">
         </div>
         <div class="form-group">
             <label for="grupo_id">Grupo</label>
