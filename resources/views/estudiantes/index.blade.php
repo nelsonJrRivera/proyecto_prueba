@@ -31,6 +31,7 @@
                     <td>{{ $estudiante->grupo->nombre_grupo }}</td>
                     <td>
                         <a href="{{ route('estudiantes.edit', $estudiante->id) }}" class="btn btn-warning">Editar</a>
+                        <a href="{{ route('estudiantes.show', $estudiante->id) }}" class="btn btn-success">Ver más</a>
                         <form action="{{ route('estudiantes.destroy', $estudiante->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')

@@ -21,6 +21,7 @@
                 name="edad" 
                 id="edad" 
                 class="form-control" 
+                value="{{ $estudiante->edad }}" 
                 required 
                 min="10" 
                 max="100"
@@ -37,6 +38,7 @@
             <input type="text" 
                 name="telefono" 
                 id="telefono" 
+                value="{{ $estudiante->telefono }}" 
                 class="form-control" 
                 required
                 pattern="[0-9]{10}"

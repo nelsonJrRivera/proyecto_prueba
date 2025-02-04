@@ -23,6 +23,7 @@
                 <td>{{ $grupo->turno }}</td>
                 <td>
                     <a href="{{ route('grupos.edit', $grupo->id) }}" class="btn btn-warning">Editar</a>
+                    <a href="{{ route('grupos.show', $grupo->id) }}" class="btn btn-success">Ver más</a>
                     <form action="{{ route('grupos.destroy', $grupo->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
